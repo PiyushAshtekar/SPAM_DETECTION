@@ -194,7 +194,7 @@ df.head()  # Displaying the first few rows of the DataFrame
 # 4. Model Building
 
 cv = CountVectorizer()  # Creating an instance of CountVectorizer
-tfidf = TfidfVectorizer(max_features=3000)  # Creating an instance of TfidfVectorizer with a limit on features
+tfidf = TfidfVectorizer()  # Creating an instance of TfidfVectorizer with a limit on features
 
 # Transforming the text data into feature vectors
 X = tfidf.fit_transform(df['transformed_text']).toarray()

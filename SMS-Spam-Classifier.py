@@ -12,6 +12,11 @@ ps = PorterStemmer()  # Creating an instance of PorterStemmer
 from collections import Counter  # Importing Counter for counting word occurrences
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer  # Importing vectorizers
 
+def download_nltk_data():
+    nltk.download('punkt')
+    nltk.download('stopwords')
+
+download_nltk_data()
 
 # Detecting the encoding of the CSV file
 with open('spam.csv', 'rb') as f:

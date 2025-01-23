@@ -1,7 +1,8 @@
 import string  # Importing string module for string operations
 import pandas as pd  # Importing pandas for data manipulation and analysis
 import chardet  # Importing chardet for character encoding detection
-# from nltk.corpus import stopwords  # Importing stopwords from NLTK for text preprocessing
+from nltk.corpora import stopwords  # Importing stopwords from NLTK for text preprocessing
+from nltk.tokenizers import punkt  # Importing stopwords from NLTK for text preprocessing
 from sklearn.preprocessing import LabelEncoder  # Importing LabelEncoder for encoding categorical labels
 import matplotlib.pyplot as plt  # Importing matplotlib for data visualization
 import nltk  # Importing NLTK for natural language processing
@@ -12,8 +13,8 @@ ps = PorterStemmer()  # Creating an instance of PorterStemmer
 from collections import Counter  # Importing Counter for counting word occurrences
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer  # Importing vectorizers
 
-# Set the path to your local NLTK data directory
-nltk.data.path.append('SPAM_DETECTION\\nltk_data')  
+# # Set the path to your local NLTK data directory
+# nltk.data.path.append('SPAM_DETECTION\\nltk_data')  
 
 # Detecting the encoding of the CSV file
 with open('spam.csv', 'rb') as f:

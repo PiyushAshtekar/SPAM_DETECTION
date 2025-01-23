@@ -12,6 +12,14 @@ from nltk.stem.porter import PorterStemmer  # Importing PorterStemmer for stemmi
 ps = PorterStemmer()  # Creating an instance of PorterStemmer
 from collections import Counter  # Importing Counter for counting word occurrences
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer  # Importing vectorizers
+import streamlit as st
+
+# Download required NLTK data
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+    nltk.download('stopwords')
 
 # # Set the path to your local NLTK data directory
 # nltk.data.path.append('SPAM_DETECTION\\nltk_data')  

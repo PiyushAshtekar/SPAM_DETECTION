@@ -1,7 +1,6 @@
 import string  # Importing string module for string operations
 import pandas as pd  # Importing pandas for data manipulation and analysis
 import chardet  # Importing chardet for character encoding detection
-import nltk
 # from nltk.corpus import stopwords  # Importing stopwords from NLTK for text preprocessing
 from sklearn.preprocessing import LabelEncoder  # Importing LabelEncoder for encoding categorical labels
 import matplotlib.pyplot as plt  # Importing matplotlib for data visualization

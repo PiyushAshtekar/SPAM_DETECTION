@@ -199,13 +199,6 @@ tfidf = TfidfVectorizer(max_features=3000)  # Creating an instance of TfidfVecto
 # Transforming the text data into feature vectors
 X = tfidf.fit_transform(df['transformed_text']).toarray()
 
-# from sklearn.preprocessing import MinMaxScaler  # Uncomment to import MinMaxScaler for scaling features
-# scaler = MinMaxScaler()  # Uncomment to create an instance of MinMaxScaler
-# X = scaler.fit_transform(X)  # Uncomment to scale the features
-
-# Appending the number of characters column to the feature set (if needed)
-# X = np.hstack((X, df['num_characters'].values.reshape(-1, 1)))  # Uncomment to append character counts
-
 y = df['target'].values  # Extracting the target variable
 
 from sklearn.model_selection import train_test_split  # Importing train_test_split for splitting data

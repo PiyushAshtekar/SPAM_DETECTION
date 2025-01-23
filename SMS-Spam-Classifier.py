@@ -11,7 +11,22 @@ from nltk.stem.porter import PorterStemmer  # Importing PorterStemmer for stemmi
 ps = PorterStemmer()  # Creating an instance of PorterStemmer
 from collections import Counter  # Importing Counter for counting word occurrences
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer  # Importing vectorizers
+# Specify the NLTK data directory
+nltk_data_dir = './nltk_data'
 
+# Ensure NLTK stopwords are downloaded
+try:
+    stopwords.words('english')
+except LookupError:
+    nltk.download('stopwords', download_dir=nltk_data_dir)
+
+# Ensure NLTK punkt is downloaded
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt', download_dir=nltk_data_dir)
+
+nltk.data.path.append(nltk_data_dir)
 # Detecting the encoding of the CSV file
 with open('spam.csv', 'rb') as f:
     result = chardet.detect(f.read())
